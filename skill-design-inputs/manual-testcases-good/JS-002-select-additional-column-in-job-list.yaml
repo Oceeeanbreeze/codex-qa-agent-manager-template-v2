@@ -1,0 +1,43 @@
+id: JS-002
+title: Добавление дополнительного поля в отображение списка задач Job Scheduler
+product: smart-monitor
+module_path:
+  - smart-monitor
+  - job-scheduler
+  - jobs-list
+component: selected-fields-popover
+priority: P2
+type: regression
+status: draft
+description: Проверить, что пользователь может добавить дополнительное поле в отображение таблицы списка задач Job Scheduler.
+preconditions:
+  - Пользователь авторизован в Smart Monitor.
+  - Открыта страница списка задач Job Scheduler.
+test_data:
+  field_name: query
+steps_table:
+  - number: 1
+    step: Нажать кнопку настройки отображаемых полей таблицы.
+    data: Не требуется.
+    expected_result: Открывается popover выбора отображаемых полей.
+  - number: 2
+    step: Выбрать поле `query` в списке доступных полей.
+    data: `query`.
+    expected_result: Поле `query` отмечено как выбранное.
+  - number: 3
+    step: Проверить таблицу списка задач.
+    data: Не требуется.
+    expected_result: В таблице появляется колонка `query`.
+postconditions:
+  - Дополнительное поле может остаться включенным в отображении таблицы.
+automation:
+  candidate: true
+  level: ui-e2e
+  coverage: full
+  related_playwright:
+    - tests/job-scheduler/job-scheduler-select-fields.spec.ts
+  proposed_spec_name: job-scheduler-select-fields.spec.ts
+tags:
+  - regression
+  - ui-e2e
+  - job-scheduler

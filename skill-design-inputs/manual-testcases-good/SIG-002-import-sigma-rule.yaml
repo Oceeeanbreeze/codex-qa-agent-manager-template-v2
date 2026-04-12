@@ -1,0 +1,47 @@
+id: SIG-002
+title: Импорт правила Sigma из файла
+product: smart-monitor
+module_path:
+  - smart-monitor
+  - sigma-rules
+  - import
+component: import-modal
+priority: P1
+type: regression
+status: draft
+description: Проверить, что пользователь может импортировать правило Sigma из локального файла через модальное окно импорта.
+preconditions:
+  - Пользователь авторизован в Smart Monitor.
+  - Открыта страница списка правил Sigma.
+test_data:
+  import_file: example-sigma-rules.yml
+steps_table:
+  - number: 1
+    step: Нажать кнопку импорта правил.
+    data: Не требуется.
+    expected_result: Открывается модальное окно импорта правил.
+  - number: 2
+    step: Выбрать файл для импорта в поле выбора файла.
+    data: `example-sigma-rules.yml`.
+    expected_result: Выбранный файл отображается в модальном окне импорта.
+  - number: 3
+    step: Нажать кнопку подтверждения импорта.
+    data: Не требуется.
+    expected_result: Запускается импорт выбранного файла.
+  - number: 4
+    step: Проверить результат импорта.
+    data: Не требуется.
+    expected_result: Отображается сообщение об успешном импорте правила.
+postconditions:
+  - Импортированное правило присутствует в системе.
+automation:
+  candidate: true
+  level: ui-e2e
+  coverage: full
+  related_playwright:
+    - tests/sigma-rules/sigma-rules-list/sigma-rules-import.spec.ts
+  proposed_spec_name: sigma-rules-import.spec.ts
+tags:
+  - regression
+  - ui-e2e
+  - sigma-rules

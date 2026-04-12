@@ -1,0 +1,43 @@
+id: MAC-001
+title: Поиск макроса в таблице макросов
+product: smart-monitor
+module_path:
+  - smart-monitor
+  - macros
+  - macros-list
+component: macros-table
+priority: P2
+type: regression
+status: draft
+description: Проверить, что пользователь может найти макрос по тексту через строку поиска на странице макросов.
+preconditions:
+  - Пользователь авторизован в Smart Monitor.
+  - Открыта страница макросов.
+test_data:
+  search_text: macros_eval
+steps_table:
+  - number: 1
+    step: Проверить наличие строки поиска на странице макросов.
+    data: Не требуется.
+    expected_result: Строка поиска отображается на странице.
+  - number: 2
+    step: Ввести текст в строку поиска.
+    data: `macros_eval`.
+    expected_result: В строке поиска отображается введенный текст.
+  - number: 3
+    step: Проверить результаты таблицы макросов.
+    data: Не требуется.
+    expected_result: В таблице макросов отображается строка, содержащая `macros_eval`.
+postconditions:
+  - Поисковый фильтр может оставаться примененным.
+automation:
+  candidate: true
+  level: ui-e2e
+  coverage: full
+  related_playwright:
+    - tests/macros/macros-table.spec.ts
+  proposed_spec_name: macros-table-search.spec.ts
+tags:
+  - regression
+  - ui-e2e
+  - macros

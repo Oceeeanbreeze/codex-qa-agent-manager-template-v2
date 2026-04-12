@@ -34,6 +34,19 @@ These conventions were derived from the Smart Monitor Playwright repository and 
 - Avoid CSS-only locators when the same target has a stable test id.
 - If a stable test id is missing, prefer requesting or documenting it rather than normalizing a weak selector as permanent style.
 
+## Legacy patterns observed in current tests
+
+Some existing repository tests still contain patterns that should not become the default standard:
+
+- `getByText(...)` for localized UI labels;
+- `getByRole(..., { name: '...' })` tied to Russian wording;
+- placeholder-based login selectors;
+- CSS locators such as `.ouiFieldSearch`, `.ouiBasicTable`, or toast class selectors when a stable test id would be better;
+- suite implementations that mix good test-id usage with temporary fallback selectors.
+
+Treat these as transitional patterns unless the repository clearly lacks a better selector.
+New generated tests should prefer the stronger project-standard path.
+
 ## Shared helpers
 
 Existing helper patterns already include:
@@ -68,3 +81,15 @@ Prefer reusing these helpers over writing local one-off replacements.
 
 - Each test should remain independently understandable and operationally safe.
 - Shared page reuse in a serial suite is acceptable only when the suite still manages state intentionally and does not create hidden coupling.
+
+## Cross-module observations
+
+Across `job-scheduler`, `sigma-rules`, and `macros`:
+- suite-level shared page usage is common;
+- page error logging is common;
+- `data-test-subj` usage is already strong in many flows;
+- some older specs still rely on localized text and CSS selectors;
+- cleanup logic may appear in `afterAll` for imported or created data.
+
+Use the strong patterns as defaults.
+Treat the weaker patterns as migration debt, not as the target style.

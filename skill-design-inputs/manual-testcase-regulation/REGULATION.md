@@ -1,16 +1,6 @@
-# Manual Testcase Regulation
+# Smart Monitor Test Case Authoring Regulation
 
-## Language
-- 
+Source of truth copy:
+- `docs/SMART_MONITOR_TESTCASE_AUTHORING_REGULATION.md`
 
-## Required fields
-- 
-
-## Format rules
-- 
-
-## Quality rules
-- 
-
-## Ideal example
-- Paste one ideal testcase here or link to a file in `manual-testcases-good/`.
+Use that document as the active regulation for manual testcase authoring in V2.

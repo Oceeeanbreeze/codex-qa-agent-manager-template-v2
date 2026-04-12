@@ -1,0 +1,50 @@
+id: SIG-001
+title: Открытие списка правил Sigma и поиск правила по текстовому запросу
+product: smart-monitor
+module_path:
+  - smart-monitor
+  - sigma-rules
+  - rules-list
+component: sigma-rules-table
+priority: P1
+type: smoke
+status: draft
+description: Проверить, что страница списка правил Sigma открывается и позволяет найти правило по текстовому запросу.
+preconditions:
+  - Пользователь авторизован в Smart Monitor.
+test_data:
+  search_text: antivirus
+steps_table:
+  - number: 1
+    step: Открыть страницу списка правил Sigma.
+    data: URL маршрута `app/sigma-rules`.
+    expected_result: Открывается страница списка правил Sigma.
+  - number: 2
+    step: Проверить наличие заголовка страницы, строки поиска, кнопки импорта и таблицы правил.
+    data: Не требуется.
+    expected_result: Заголовок страницы, строка поиска, кнопка импорта и таблица правил отображаются.
+  - number: 3
+    step: Ввести поисковый запрос в строку поиска.
+    data: `antivirus`.
+    expected_result: В строке поиска отображается введенное значение.
+  - number: 4
+    step: Нажать Enter в строке поиска.
+    data: Не требуется.
+    expected_result: Таблица фильтруется по введенному поисковому запросу.
+  - number: 5
+    step: Проверить первую строку таблицы результатов.
+    data: Не требуется.
+    expected_result: Первая строка таблицы содержит текст `antivirus`.
+postconditions:
+  - Фильтр поиска может оставаться примененным.
+automation:
+  candidate: true
+  level: ui-e2e
+  coverage: full
+  related_playwright:
+    - tests/sigma-rules/sigma-rules-list/sigma-rules-list.spec.ts
+  proposed_spec_name: sigma-rules-list-search.spec.ts
+tags:
+  - smoke
+  - ui-e2e
+  - sigma-rules

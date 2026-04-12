@@ -1,0 +1,71 @@
+id: JS-001
+title: Создание задачи Job Scheduler с заполнением обязательных полей
+product: smart-monitor
+module_path:
+  - smart-monitor
+  - job-scheduler
+  - create-job
+component: create-job-form
+priority: P1
+type: smoke
+status: draft
+description: Проверить, что пользователь может создать задачу в Job Scheduler, заполнив обязательные поля формы.
+preconditions:
+  - Пользователь авторизован в Smart Monitor под учетной записью администратора.
+  - Открыта рабочая оболочка Smart Monitor без критической ошибки приложения.
+test_data:
+  job_name_prefix: AT-job-scheduler-
+  search_query: |
+    source internal_audit-*
+    | head 1
+  lock_duration_seconds: "10"
+steps_table:
+  - number: 1
+    step: Открыть страницу создания задачи Job Scheduler.
+    data: URL маршрута `app/job-scheduler/job-create`.
+    expected_result: Открывается форма создания задачи Job Scheduler.
+  - number: 2
+    step: Проверить наличие поля "Имя", редактора поискового запроса и кнопки сохранения.
+    data: Не требуется.
+    expected_result: Поле "Имя", редактор поискового запроса и кнопка сохранения отображаются на странице.
+  - number: 3
+    step: Ввести в поле "Имя" уникальное значение с префиксом `AT`.
+    data: `AT-job-scheduler-<timestamp>`.
+    expected_result: Введенное имя отображается в поле "Имя", заголовке страницы и последнем элементе хлебных крошек.
+  - number: 4
+    step: Ввести поисковый запрос в редактор поискового запроса.
+    data: Текст из `search_query`.
+    expected_result: В редакторе отображается введенный поисковый запрос.
+  - number: 5
+    step: Ввести значение длительности блокировки в обязательное поле длительности блокировки.
+    data: `10`.
+    expected_result: В поле длительности блокировки отображается значение `10`.
+  - number: 6
+    step: Нажать кнопку сохранения.
+    data: Не требуется.
+    expected_result: Отображается сообщение об успешном создании задачи.
+  - number: 7
+    step: Открыть страницу списка задач Job Scheduler.
+    data: URL маршрута `app/job-scheduler/jobs-list`.
+    expected_result: Открывается страница списка задач Job Scheduler.
+  - number: 8
+    step: Найти созданную задачу по имени через строку поиска.
+    data: Имя задачи из шага 3.
+    expected_result: В таблице списка задач отображается строка с созданной задачей.
+postconditions:
+  - В системе создана новая задача Job Scheduler.
+automation:
+  candidate: true
+  level: ui-e2e
+  coverage: full
+  related_playwright:
+    - tests/job-scheduler/job-scheduler-user-story-full-flow.spec.ts
+    - tests/job-scheduler/job-scheduler-create-job.spec.ts
+  proposed_spec_name: job-scheduler-create-required-fields.spec.ts
+tags:
+  - smoke
+  - ui-e2e
+  - job-scheduler
+notes:
+  - Для автоматизации предпочтительны `data-test-subj` селекторы.
+  - Имя создаваемой сущности должно использовать префикс `AT`.

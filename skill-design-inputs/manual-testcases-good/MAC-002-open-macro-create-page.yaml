@@ -1,0 +1,42 @@
+id: MAC-002
+title: Переход на страницу создания макроса
+product: smart-monitor
+module_path:
+  - smart-monitor
+  - macros
+  - create-macro
+component: macros-list-toolbar
+priority: P2
+type: smoke
+status: draft
+description: Проверить, что пользователь может перейти на страницу создания нового макроса со страницы списка макросов.
+preconditions:
+  - Пользователь авторизован в Smart Monitor.
+  - Открыта страница макросов.
+test_data: {}
+steps_table:
+  - number: 1
+    step: Проверить наличие кнопки создания макроса на странице списка макросов.
+    data: Не требуется.
+    expected_result: Кнопка создания макроса отображается на странице.
+  - number: 2
+    step: Нажать кнопку создания макроса.
+    data: Не требуется.
+    expected_result: Выполняется переход на страницу создания макроса.
+  - number: 3
+    step: Проверить адрес текущей страницы.
+    data: Не требуется.
+    expected_result: URL содержит путь `macros/create`.
+postconditions:
+  - Открыта страница создания макроса.
+automation:
+  candidate: true
+  level: ui-e2e
+  coverage: full
+  related_playwright:
+    - tests/macros/macros-table.spec.ts
+  proposed_spec_name: macros-create-navigation.spec.ts
+tags:
+  - smoke
+  - ui-e2e
+  - macros
