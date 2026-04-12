@@ -40,6 +40,10 @@ smart-monitor-agent-system-v2/
         SKILL.md
       smart-monitor-failure-triage/
         SKILL.md
+      smart-monitor-browser-evidence/
+        SKILL.md
+      smart-monitor-test-repair-policy/
+        SKILL.md
       smart-monitor-token-budget-guard/
         SKILL.md
   .codex/
