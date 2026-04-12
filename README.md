@@ -69,14 +69,16 @@ smart-monitor-agent-system-v2/
 1. Read `AGENTS.md`.
 2. Read `docs/PIPELINES.md`.
 3. Read `docs/SMART_MONITOR_TESTCASE_AUTHORING_REGULATION.md`.
-4. Read `docs/SKILL_POLICY.md`.
-5. Review `.agents/skills/` to see the current repo-scoped skill set.
-6. Read `docs/MCP_STRATEGY.md`.
-7. Read `docs/MCP_MATRIX.md`.
-8. Read `docs/MCP_SETUP.md`.
-9. Read `docs/MEMORY_POLICY.md`.
-10. Read `docs/TOKEN_BUDGET_POLICY.md`.
-11. Paste `docs/CODEX_BOOTSTRAP_PROMPT.md` into a new Codex chat for this repo.
+4. Read `docs/ARTIFACT_SCHEMAS.md`.
+5. Read `docs/SKILL_POLICY.md`.
+6. Review `.agents/skills/` to see the current repo-scoped skill set.
+7. Read `docs/MCP_STRATEGY.md`.
+8. Read `docs/MCP_MATRIX.md`.
+9. Read `docs/MCP_SETUP.md`.
+10. Read `docs/MEMORY_POLICY.md`.
+11. Read `docs/TOKEN_BUDGET_POLICY.md`.
+12. Read `docs/DEPLOYMENT_READINESS.md`.
+13. Paste `docs/CODEX_BOOTSTRAP_PROMPT.md` into a new Codex chat for this repo.
 
 ## Shared memory model
 

@@ -11,11 +11,13 @@ Read in this order:
 3. .codex/agents/*.toml
 4. .agents/skills/*/SKILL.md
 5. docs/SMART_MONITOR_TESTCASE_AUTHORING_REGULATION.md
-6. docs/PIPELINES.md
-7. docs/SKILL_POLICY.md
-8. docs/MEMORY_POLICY.md
-9. docs/TOKEN_BUDGET_POLICY.md
-10. README.md
+6. docs/ARTIFACT_SCHEMAS.md
+7. docs/PIPELINES.md
+8. docs/SKILL_POLICY.md
+9. docs/MEMORY_POLICY.md
+10. docs/TOKEN_BUDGET_POLICY.md
+11. docs/DEPLOYMENT_READINESS.md
+12. README.md
 
 Then follow these rules exactly:
 - use the smallest safe pipeline
@@ -29,6 +31,7 @@ Then follow these rules exactly:
 - do not archive intermediate reasoning
 - apply the migration rules from docs/SKILL_POLICY.md
 - produce stage artifacts, not only chat summaries
+- if shared memory is not yet configured, continue in local-only mode instead of blocking deployment
 
 When given a task, first state:
 - selected pipeline

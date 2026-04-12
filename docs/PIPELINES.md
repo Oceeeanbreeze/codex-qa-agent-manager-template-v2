@@ -11,6 +11,8 @@ Use:
 
 Output:
 - `scenario-pack`
+Minimum schema:
+- see `docs/ARTIFACT_SCHEMAS.md`
 
 ## Automation Generation
 
@@ -23,6 +25,8 @@ Use:
 
 Output:
 - `automation-spec` and or code patch
+Minimum schema:
+- see `docs/ARTIFACT_SCHEMAS.md`
 
 ## Failure Analysis
 
@@ -36,6 +40,8 @@ Use:
 
 Output:
 - `failure-dossier`
+Minimum schema:
+- see `docs/ARTIFACT_SCHEMAS.md`
 
 ## Test Repair
 
@@ -50,6 +56,8 @@ Use:
 Output:
 - code patch
 - `repair-report`
+Minimum schema:
+- see `docs/ARTIFACT_SCHEMAS.md`
 
 ## Browser trigger rules
 
