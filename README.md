@@ -30,6 +30,16 @@ smart-monitor-agent-system-v2/
   README.md
   AGENTS.md
   .gitignore
+  .agents/
+    skills/
+      smart-monitor-scenario-pack-writer/
+        SKILL.md
+      smart-monitor-playwright-automation-writer/
+        SKILL.md
+      smart-monitor-failure-triage/
+        SKILL.md
+      smart-monitor-token-budget-guard/
+        SKILL.md
   .codex/
     config.toml
     agents/
@@ -53,12 +63,13 @@ smart-monitor-agent-system-v2/
 1. Read `AGENTS.md`.
 2. Read `docs/PIPELINES.md`.
 3. Read `docs/SKILL_POLICY.md`.
-4. Read `docs/MCP_STRATEGY.md`.
-5. Read `docs/MCP_MATRIX.md`.
-6. Read `docs/MCP_SETUP.md`.
-7. Read `docs/MEMORY_POLICY.md`.
-8. Read `docs/TOKEN_BUDGET_POLICY.md`.
-9. Paste `docs/CODEX_BOOTSTRAP_PROMPT.md` into a new Codex chat for this repo.
+4. Review `.agents/skills/` to see the current repo-scoped skill set.
+5. Read `docs/MCP_STRATEGY.md`.
+6. Read `docs/MCP_MATRIX.md`.
+7. Read `docs/MCP_SETUP.md`.
+8. Read `docs/MEMORY_POLICY.md`.
+9. Read `docs/TOKEN_BUDGET_POLICY.md`.
+10. Paste `docs/CODEX_BOOTSTRAP_PROMPT.md` into a new Codex chat for this repo.
 
 ## Shared memory model
 

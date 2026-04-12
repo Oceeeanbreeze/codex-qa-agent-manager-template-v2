@@ -9,11 +9,12 @@ Read in this order:
 1. AGENTS.md
 2. .codex/config.toml
 3. .codex/agents/*.toml
-4. docs/PIPELINES.md
-5. docs/SKILL_POLICY.md
-6. docs/MEMORY_POLICY.md
-7. docs/TOKEN_BUDGET_POLICY.md
-8. README.md
+4. .agents/skills/*/SKILL.md
+5. docs/PIPELINES.md
+6. docs/SKILL_POLICY.md
+7. docs/MEMORY_POLICY.md
+8. docs/TOKEN_BUDGET_POLICY.md
+9. README.md
 
 Then follow these rules exactly:
 - use the smallest safe pipeline
