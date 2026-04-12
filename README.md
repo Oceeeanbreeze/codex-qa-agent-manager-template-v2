@@ -36,6 +36,8 @@ smart-monitor-agent-system-v2/
         SKILL.md
       smart-monitor-playwright-automation-writer/
         SKILL.md
+      smart-monitor-playwright-review-checklist/
+        SKILL.md
       smart-monitor-failure-triage/
         SKILL.md
       smart-monitor-token-budget-guard/
